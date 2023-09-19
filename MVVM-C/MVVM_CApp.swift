@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct MVVM_CApp: App {
+    @AppStorage("isLoggedIn") var isLoggedIn: Bool = false
+    @StateObject var appCoordinator = AppCoordinator()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            appCoordinator.start()
         }
     }
 }
